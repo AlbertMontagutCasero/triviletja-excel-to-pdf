@@ -1,16 +1,15 @@
 import {CsvParser} from "../model/csvParser.js";
-import {PreguntasFactory} from "../model/preguntas-factory.js";
-import {PdfGenerator} from "./pdf-generator.js";
+import {TarjetasFactory} from "../model/tarjetas-factory.js";
+import {PdfGenerator} from "../model/pdf-generator.js";
 
 export class GeneratePdfInteractor {
   execute(request) {
     const csvParser = new CsvParser(request.getRawCsv());
     const rows = csvParser.getRowsSplitInColumns();
 
-    const preguntas = new PreguntasFactory(rows).createWithCsvRows();
+    const tarjetas = new TarjetasFactory(rows).createWithCsvRows();
 
-    new PdfGenerator(preguntas).generate();
-
+    new PdfGenerator(tarjetas).generate();
   }
 }
 

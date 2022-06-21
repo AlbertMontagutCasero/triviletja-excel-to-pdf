@@ -1,9 +1,9 @@
-import {Pregunta} from "./pregunta.js";
+import {Tarjeta} from "./tarjeta.js";
 
-export class PreguntaBuilder {
+export class TarjetaBuilder {
   #pregunta
   #respuestas = []
-  #type
+  #tipo
 
   withRespuestas(respuestas) {
     this.#respuestas = this.#removeVoidStrigs(respuestas)
@@ -16,8 +16,8 @@ export class PreguntaBuilder {
     });
   }
 
-  withType(type) {
-    this.#type = type
+  withTipo(tipo) {
+    this.#tipo = tipo
     return this
   }
 
@@ -27,6 +27,6 @@ export class PreguntaBuilder {
   }
 
   build() {
-    return new Pregunta(this.#type, this.#pregunta, this.#respuestas)
+    return new Tarjeta(this.#tipo, this.#pregunta, this.#respuestas)
   }
 }
