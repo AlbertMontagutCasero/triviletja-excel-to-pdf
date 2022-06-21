@@ -1,0 +1,16 @@
+{
+  "name": "triviletja-excel-to-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "read-excel-file": "5.3.4"
+  }
+}
